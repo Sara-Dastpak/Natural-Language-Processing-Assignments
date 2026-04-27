@@ -1,10 +1,11 @@
 from sklearn.model_selection import train_test_split
 import numpy as np
 import string
+import os
 
 #Robert Frost poems converting to lists
 RF = []
-file_path = r"C:\Users\Zhivar\Desktop\programs\NLP\markovmodels\poetclassifier\t\robert_frost.txt"
+file_path = os.path.join(os.path.dirname(__file__), "robert_frost.txt")
 with open(file_path, 'r', encoding='utf-8') as file:
     for line in file:
         line = line.lower().translate(str.maketrans('', '', string.punctuation))
@@ -72,7 +73,7 @@ def markov_model_RF(sequence):
 
 #Edgar Allan Poe poems converting to lists            
 EAP = []
-file_path = r"C:\Users\Zhivar\Desktop\programs\NLP\markovmodels\poetclassifier\t\edgar_allan_poe.txt"
+file_path = os.path.join(os.path.dirname(__file__), "edgar_allan_poe.txt")
 with open(file_path, 'r', encoding='utf-8') as file:
     for line in file:
         line = line.lower().translate(str.maketrans('', '', string.punctuation))
