@@ -2,11 +2,12 @@ import numpy as np
 import string
 import random
 import math
+import os
 
 RF = []
 line_num = 0
 word_num = 0
-file_path = r"C:\Users\Zhivar\Desktop\programs\NLP\markovmodels\poetclassifier\t\robert_frost.txt"
+file_path = os.path.join(os.path.dirname(__file__), "robert_frost.txt")
 with open(file_path, 'r', encoding='utf-8') as file:
     for line in file:
         line = line.lower().translate(str.maketrans('', '', string.punctuation))
