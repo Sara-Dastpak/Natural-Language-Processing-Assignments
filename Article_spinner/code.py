@@ -6,6 +6,7 @@ import numpy as np
 import string
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 
+# opening the text file
 bbc_text = []
 word_set = set()
 file_path = os.path.join(os.path.dirname(__file__), "bbc_text.csv")
@@ -18,6 +19,7 @@ with open(file_path, 'r', encoding='utf-8') as file:
         for words in word_tokenize(clean_line):
             word_set.add(words)
 stop_words = set(stopwords.words('english'))
+
 # Markov_model:
 count_dict = {}
 A_dict = {}
@@ -39,11 +41,14 @@ for line in bbc_text:
         if wnex not in A_dict[wpre]:
             A_dict[wpre][wnex] = {}
         A_dict[wpre][wnex][wmid] = A_dict[wpre][wnex].get(wmid, 0) + 1
+# Changing count into probability
 for wpre, wnexs in A_dict.items():
     for wnex, wmids in A_dict[wpre].items():
         total_wnex_sum = sum(wmids.values())
         for wmid, count in wmids.items():
             A_dict[wpre][wnex][wmid] = count / total_wnex_sum 
+
+# Finding the most probable word          
 def chosen_word(wp, wn):
     if wp in A_dict and wn in A_dict[wp]:
         mid_words = A_dict[wp][wn]
@@ -51,31 +56,31 @@ def chosen_word(wp, wn):
         return best_word
     else:
         return None
-# choosing which word to change
+
+# Choosing which word to change
 threshold = 4
-b = 0
 bbc_text_new = []
+detokenizer = TreebankWordDetokenizer()
 for index, line in enumerate(bbc_text):
     b = 0
     word_list = word_tokenize(line)
     n = len(word_list)
-    num = max(1, int(n * 0.5))
+    num = max(2, int(n * 0.5))
     for i, word in enumerate(word_list):
         if i > 0 and i + 1 < n and b < num:
-            if (word not in stop_words
+            if (word.isalpha()
+                and word not in stop_words
                 and word not in string.punctuation
                 and count_dict.get(word, 0) > threshold):
                 w = chosen_word(word_list[i-1], word_list[i+1])
                 if w is not None and w != word:
                     word_list[i] = w
                     b += 1
-    new_line = TreebankWordDetokenizer().detokenize(word_list)
+    new_line = detokenizer.detokenize(word_list)
     bbc_text_new.append(new_line)
-    """
-for i, line in enumerate(bbc_text[:10], 1):
-    print(f"{i}: {line}")
-    """
-for i in range(10):  # compare the first 10 lines
+
+# printing the result
+for i in range(10): 
     print("ORIGINAL:", bbc_text[i])
     print("SPUN     :", bbc_text_new[i])
     print("-" * 80)
