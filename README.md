@@ -5,9 +5,9 @@ Course exercises and coding assignments from "Natural Language Processing with P
 
 ##  Key Libraries
 * Data Processing: `NumPy`, `Pandas`
-* Classic NLP & Vectorization:** `NLTK`, `Scikit-learn`
-* Deep Learning & Neural Networks:** `TensorFlow`, `Keras`
-* Linear Algebra & SVD:** `SciPy`
+* Classic NLP & Vectorization: `NLTK`, `Scikit-learn`
+* Deep Learning & Neural Networks: `TensorFlow`, `Keras`
+* Linear Algebra & SVD: `SciPy`
 
 ---
 
