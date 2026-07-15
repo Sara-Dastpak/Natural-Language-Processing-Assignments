@@ -3,7 +3,7 @@ Course exercises and coding assignments from "Natural Language Processing with P
 
 ---
 
-## 🛠️ Key Libraries
+##  Key Libraries
 * Data Processing: `NumPy`, `Pandas`
 * Classic NLP & Vectorization:** `NLTK`, `Scikit-learn`
 * Deep Learning & Neural Networks:** `TensorFlow`, `Keras`
@@ -11,7 +11,7 @@ Course exercises and coding assignments from "Natural Language Processing with P
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 Each directory focuses on a core NLP concept.
 
@@ -26,9 +26,7 @@ Each directory focuses on a core NLP concept.
 * | Text_Summarization | Extractive text summarizers comparing a normalized TF-IDF sentence weight algorithm against a custom TextRank (PageRank) graph-based model solved via eigenvector analysis. | NumPy, NLTK, Scikit-learn, Graph Theory |
 ---
 
-## 🚀 Key Learning Milestones
-
-## Key Learning Milestones
+##  Key Learning Milestones
 
 * "Vector Space Models & SVD"
   * Bag-of-Words (BoW) & TF-IDF vectorization.
