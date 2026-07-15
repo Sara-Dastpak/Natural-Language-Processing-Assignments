@@ -16,7 +16,7 @@ Course exercises and coding assignments from "Natural Language Processing with P
 Each directory focuses on a core NLP concept.
 
 | Directory | Description | Tools |
-
+| :--- | :--- | :--- |
 * | Article_spinner | An unsupervised text spinner that predicts and replaces words based on the conditional probability of their surrounding left and right context. | Trigram Markov Model, NLTK, NumPy |
 * | Cipher_Decryption | An automated decryption engine that uses a Genetic Algorithm (GA) with custom crossover and mutation operators to break substitution ciphers. | Genetic Algorithms, Markov Bigrams, Python |
 * | Markov_Model | A dual-purpose Markov engine featuring a first-order (bigram) classifier to identify authors (Frost vs. Poe) and a second-order (trigram) text generator for synthetic poetry. | Markov Chains, Bigrams/Trigrams, NumPy |
@@ -28,23 +28,21 @@ Each directory focuses on a core NLP concept.
 
 ##  Key Learning Milestones
 
-* "Vector Space Models & SVD"
+* Vector Space Models & SVD
   * Bag-of-Words (BoW) & TF-IDF vectorization.
   * Truncated SVD (LSA) for latent semantic dimensionality reduction.
 
-* "Markov Models"
+* Markov Models
   * Bigram & trigram probability sequence modeling.
 
-* "Graph-Based NLP"
+* Graph-Based NLP
   * TextRank extractive summarization using sentence similarity graphs.
   * Eigenvector decomposition in NumPy to find highly ranked central sentences.
 
-* "Genetic Algorithms"
+* Genetic Algorithms
   * Evolutionary optimization to decrypt monoalphabetic substitution ciphers.
   * Custom chromosome crossover, swap mutations, and log-likelihood fitness.
 
-* "ML & Deep Learning in NLP"
-  *
-  *
+* ML & Deep Learning in NLP
 
 ---
